@@ -1,5 +1,3 @@
-> ✅ KEEP: Shared framework — do not change when switching projects.
-
 # Research
 
 Follow `AGENTS.md` for global rules. This file is research-specific only.

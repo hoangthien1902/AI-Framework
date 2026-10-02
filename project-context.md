@@ -1,14 +1,5 @@
-> ⚠️ CHANGE PER PROJECT: Fill fields relevant to this project when starting or switching projects.
-> Keep this file factual. Do not add process/operating rules here — those live in `AGENTS.md` / `rules/*`.
-
 # Project Context
 
-> Fill the fields that apply to this project. Delete sections that truly do not apply.
-> Unfilled fields must not be treated as known facts.
-> For a specific task, irrelevant unfilled fields do not block work.
-> This file is the project-specific source of truth for **facts** (not global policy).
-
----
 
 ## 1. Project
 

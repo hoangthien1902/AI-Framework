@@ -1,5 +1,3 @@
-> ✅ KEEP: Shared framework — do not change when switching projects.
-
 # Security Rules
 
 Domain-specific security only. Global invent / scope / git / secrets-in-commits live in `AGENTS.md`.

@@ -1,5 +1,3 @@
-> ✅ KEEP: Shared framework — do not change when switching projects.
-
 # UI Rules (lightweight)
 
 Inspectable UI constraints only. Global invent / scope / inspect rules live in `AGENTS.md`.

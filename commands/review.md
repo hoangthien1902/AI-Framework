@@ -1,5 +1,3 @@
-> ✅ KEEP: Shared framework — do not change when switching projects.
-
 # Review
 
 Follow `AGENTS.md` for global rules. This is an **independent** review pass — not the implementer self-check.

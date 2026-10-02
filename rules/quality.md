@@ -1,5 +1,3 @@
-> ✅ KEEP: Shared framework — do not change when switching projects.
-
 # Quality Rules
 
 Code-quality specifics only. Scope control and self-check live in `AGENTS.md`.

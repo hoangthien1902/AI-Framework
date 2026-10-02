@@ -1,5 +1,3 @@
-> ✅ KEEP: Shared framework — do not change when switching projects.
-
 # Testing Rules
 
 Domain-specific testing guidance. Global verify / “do not invent test results” live in `AGENTS.md`.

@@ -1,5 +1,3 @@
-> ✅ KEEP: Shared framework — do not change when switching projects.
-
 # AI / LLM Rules
 
 Domain-specific AI/LLM guidance only. Global invent / verify live in `AGENTS.md`.

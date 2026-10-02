@@ -1,5 +1,3 @@
-> ✅ KEEP: Shared framework — do not change when switching projects.
-
 # Workflow Rules
 
 Decision tree only. Global invent / scope / verify / git / priority live in `AGENTS.md`.

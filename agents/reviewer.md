@@ -1,5 +1,3 @@
-> ✅ KEEP: Shared framework — do not change when switching projects.
-
 # Reviewer Agent
 
 Follow `AGENTS.md` for global rules. This file is role-specific only.

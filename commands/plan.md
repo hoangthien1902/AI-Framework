@@ -1,5 +1,3 @@
-> ✅ KEEP: Shared framework — do not change when switching projects.
-
 # Plan
 
 Follow `AGENTS.md` for global rules. `rules/workflow.md` decides **when** to plan; this file defines **how**.

@@ -1,5 +1,3 @@
-> ✅ KEEP: Shared framework — do not change when switching projects.
-
 # AI Framework
 
 Global operating rules for all agents. Child files (`rules/*`, `agents/*`, `commands/*`) add only role- or domain-specific guidance. Do not restate these global rules there.
