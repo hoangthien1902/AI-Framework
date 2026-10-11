@@ -36,4 +36,4 @@ Review an implementation before treating a sensitive/high-impact task as complet
 
 - Focus on meaningful issues.
 - Do not modify code during review.
-- Review heuristics: `agents/reviewer.md`.
+- Reviewer perspective and heuristics: `AGENTS.md` section 8.4.

@@ -1,6 +1,6 @@
 # AI Framework
 
-Global operating rules for all agents. Child files (`rules/*`, `agents/*`, `commands/*`) add only role- or domain-specific guidance. Do not restate these global rules there.
+Global operating rules and specialist workflows. Child files (`rules/*`, `commands/*`) add only domain-specific guidance or command entry points. Do not restate these global rules there.
 
 ## 0. Instruction Priority (highest → lowest)
 
@@ -10,7 +10,7 @@ Global operating rules for all agents. Child files (`rules/*`, `agents/*`, `comm
 4. Remaining guidance in this file (`AGENTS.md`)
 5. Relevant `rules/*`
 6. `project-context.md`
-7. Relevant `agents/*` or `commands/*` when invoked
+7. Relevant `commands/*` when invoked
 
 Higher-priority instructions override lower-priority instructions.
 Project-specific instructions must not weaken security, safety, or verification requirements.
@@ -90,7 +90,7 @@ Never fill gaps with guesses presented as facts.
 
 - `/plan` or required planning → produce plan → **wait for approval** before implement.
 - Explicit override allowed: user clearly says to skip plan and implement now.
-- **Architect** is optional specialist input inside planning when there is a meaningful architectural decision. It does **not** replace the plan approval gate (see `agents/architect.md`).
+- **Architect** is optional specialist input inside planning when there is a meaningful architectural decision. It does **not** replace the plan approval gate (see section 8.2).
 
 Flow:
 - Simple: Understand → Inspect → Implement → Verify (self-check)
@@ -120,7 +120,7 @@ Skipping tests ≠ skipping verification. Always perform other relevant checks a
 
 ### Independent review (not always required)
 
-Use `commands/review.md` / `agents/reviewer.md` when **any** of these apply:
+Use `commands/review.md` with the reviewer workflow in section 8.4 when **any** of these apply:
 - Security-sensitive changes
 - Auth, payments, data migrations
 - Public API changes
@@ -146,19 +146,67 @@ Only if there is a meaningful next step.
 
 ---
 
-## 8. Agents / Commands / Rules
+## 8. Specialist Workflows
 
-Use when helpful; do not auto-run just because files exist.
+Use these workflows when the task calls for them; do not invoke a specialist workflow just because it is documented.
 
-**Agents:** `architect` · `debugger` · `reviewer`  
+### 8.1 Research
+
+Use for investigating a technical question, library, or implementation option before deciding.
+
+1. Define the question.
+2. Read `project-context.md` and inspect the relevant codebase.
+3. Gather evidence from reliable, current sources.
+4. Compare options, trade-offs, and risks.
+5. Present a recommendation, separating verified facts from assumptions.
+
+Output: question, findings, options, trade-offs, recommendation, and sources.
+
+### 8.2 Architect
+
+Use only when a task involves meaningful architectural decisions, such as system boundaries, data/control flow, lasting data-model or public-API shape, major dependencies, or cross-cutting redesign. Do not use this workflow for ordinary feature planning.
+
+1. Read `project-context.md`, requirements, and the draft plan; inspect the existing architecture.
+2. Identify affected components and data/control flow.
+3. Explain key decisions, trade-offs, and risks, preferring the simplest approach that fits existing patterns.
+4. Feed the analysis into the implementation plan.
+
+Architect analysis does not replace the plan approval gate or create a second approval gate. Ask the user if an architectural decision cannot be made safely after inspection.
+
+Output: architecture, affected components, data/control flow, key decisions, trade-offs, and risks.
+
+### 8.3 Debugger
+
+Use to investigate a reported bug. Implement only when the user requests a fix; otherwise report findings.
+
+1. Read `project-context.md` and understand the reported behavior.
+2. Reproduce or inspect the evidence, then trace the relevant code and data flow.
+3. Identify the root cause.
+4. If a fix is requested, apply the smallest reliable change and verify it, including regression cases where practical.
+
+Output: bug, root cause, proposed or applied fix, verification (if applied), and remaining risks.
+
+### 8.4 Reviewer
+
+Perform an independent review for security-sensitive changes, auth, payments, migrations, public API or architectural changes, or when the user requests review. Do not modify code during review.
+
+1. Read `project-context.md`, the original requirement, and the approved plan if one exists.
+2. Inspect changed files and check correctness, architecture fit, code quality, security, testing, and scope.
+3. Focus on meaningful issues that could affect merge or release; do not nitpick harmless style preferences.
+
+Output: issues, severity, suggested fixes, and approval status. The review workflow entry point is `commands/review.md`.
+
+## 9. Commands and Rules
+
+Use command files as entry points when helpful; do not invoke them automatically just because they exist.
+
 **Commands:** `plan` · `research` · `review`  
-**Rules:** `workflow` · `quality` · `security` · `testing` · `ai` · `ui` (UI work)
+**Rules:** `workflow` · `quality` · `security` · `testing` · `ai`
 
 | Concern | Owner |
-|---------|--------|
+|---------|-------|
 | Implementation planning + approval gate | `commands/plan.md` |
-| Architectural decisions / trade-offs | `agents/architect.md` (optional, inside planning) |
-| Independent review heuristics | `agents/reviewer.md` |
-| Independent review workflow | `commands/review.md` |
+| Research command entry point | `commands/research.md` and section 8.1 |
+| Independent review workflow | `commands/review.md` and section 8.4 |
 
 Child files inherit this document. They must not duplicate invent / scope / verify / git rules.
