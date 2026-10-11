@@ -17,7 +17,7 @@ These workflow rules may be overridden **only** with an explicit user statement 
 - Requirement is ambiguous and assumptions would change the design
 
 How: `commands/plan.md`.
-If a meaningful architectural decision exists: invoke `agents/architect.md` inside planning — it does not replace plan approval.
+If a meaningful architectural decision exists: use the architect workflow in `AGENTS.md` section 8.2 inside planning — it does not replace plan approval.
 
 ## Ask the user when
 - After inspect, missing project context or info still materially affects the solution

@@ -8,25 +8,23 @@ rules/workflow.md
  ↓
 commands/plan.md
  ↓
-research.md (nếu cần)
+research workflow in AGENTS.md (nếu cần)
  ↓
-security.md + ai.md + quality.md + ui.md
+security.md + ai.md + quality.md
  ↓
-architect.md (nếu cần)
+architect workflow in AGENTS.md (nếu cần)
  ↓
 APPROVAL
  ↓
 FE + BE IMPLEMENT
  ↓
-debugger.md (nếu cần)
+debugger workflow in AGENTS.md (nếu cần)
  ↓
 testing.md
  ↓
 SELF-CHECK
  ↓
-commands/review.md
- ↓
-reviewer.md
+commands/review.md + reviewer workflow in AGENTS.md (nếu cần)
  ↓
 FIX / REVIEW LOOP
  ↓
